@@ -1,7 +1,7 @@
-# react-container
+# okto-js
 
 ## How it works? 
-`react-container` brings `IoC` functionality into React.
+`okto-js` brings `IoC` functionality into React.
 
 ## How to use it
 
@@ -27,7 +27,7 @@ export class ConfigRetriever extends IConfigRetriever{
 - Create a module and register the service in it.
 ```typescript
 import { interfaces } from "inversify";
-import { IModule } from "react-container";
+import { IModule } from "okto-js";
 
 import { IConfigRetriever,  ConfigRetriever } from './ConfigRetriever';
 
@@ -42,7 +42,7 @@ export class ConfigModule implements IModule, IViewModelsModule {
 - Create a component where use the service
 ```tsx
 import { useState, useEffect } from "react";
-import { useContainer } from "react-container";
+import { useContainer } from "okto-js";
 
 import { IConfigRetriever } from './ConfigRetriever';
 
@@ -60,7 +60,7 @@ export function Config = () => {
 ```tsx
 import "reflect-metadata";
 import * as React from "react";
-import { Application } from "react-container";
+import { Application } from "okto-js";
 
 import { Config } from "./Config";
 import { ConfigModule } from "./ConfigModule";

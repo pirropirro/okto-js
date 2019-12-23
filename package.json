@@ -1,5 +1,5 @@
 {
-  "name": "okto.js",
+  "name": "okto-js",
   "author": "pirropirro",
   "version": "0.0.1-beta.1",
   "main": "dist",
@@ -7,12 +7,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pirropirro/okto.js.git"
+    "url": "git+https://github.com/pirropirro/okto-js.git"
   },
   "bugs": {
-    "url": "https://github.com/pirropirro/okto.js/issues"
+    "url": "https://github.com/pirropirro/okto-js/issues"
   },
-  "homepage": "https://github.com/pirropirro/okto.js#readme",
+  "homepage": "https://github.com/pirropirro/okto-js#readme",
   "dependencies": {
     "inversify": "^4.3.0",
     "inversify-inject-decorators": "^3.1.0",
