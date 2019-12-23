@@ -3,10 +3,11 @@ node_js:
 - '6'
 install:
 - yarn
+- yarn add react@16.12.0 react-dom@16.12.0
 script:
-- yarn test && yarn build
+- yarn build
 deploy:
-  provider: npm
+  provider: yarn
   skip_cleanup: true
   email: fra.pirrotta@gmail.com
   api_key:
