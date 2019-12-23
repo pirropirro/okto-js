@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es5",
+      "dom",
+      "es6"
+    ],
+    "outDir": "dist",
+    "target": "es5",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "module": "commonjs",
+    "types": [
+      "node",
+      "mocha",
+      "reflect-metadata"
+    ],
+    "declaration": true
+  },
+  "exclude": [
+    "node_modules",
+    "tests/**/*.ts"
+  ]
+}
