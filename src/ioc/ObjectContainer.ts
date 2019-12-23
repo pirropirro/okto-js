@@ -14,23 +14,23 @@ export interface IObjectContainer {
 
 @injectable()
 export class ObjectContainer implements IObjectContainer, IServiceLocator {
-  get<T>(key: string, name?: string): T {
+  public get<T>(key: string, name?: string): T {
     return !name ? container.get<T>(key) : container.getNamed<T>(key, name);
   }
 
-  set<T>(key: string | symbol, object: T | interfaces.Newable<T>, parent?: string): void {
-    let binding = isFunction(object)
+  public set<T>(key: string | symbol, object: T | interfaces.Newable<T>, parent?: string): void {
+    const binding = isFunction(object)
       ? container.bind<T>(key).to(object as interfaces.Newable<T>)
       : container.bind<T>(key).toConstantValue(object as T);
     if (parent)
       binding.whenInjectedInto(parent);
   }
 
-  contains(key: string): boolean {
+  public contains(key: string): boolean {
     return container.isBound(key);
   }
 
-  remove(key: string): void {
+  public remove(key: string): void {
     container.unbind(key);
   }
 }
