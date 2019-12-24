@@ -3,7 +3,5 @@
 .travis
 src
 node_modules
-tslint.json
-tsconfig.json
 tests
 !dist

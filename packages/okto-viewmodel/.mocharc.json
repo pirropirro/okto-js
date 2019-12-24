@@ -2,7 +2,7 @@
   "extension": [
       "ts"
   ],
-  "spec": "./packages/*/**/tests/**/*.ts",
+  "spec": "tests/**/*.ts",
   "require": [
       "ts-node/register",
       "reflect-metadata/Reflect"
