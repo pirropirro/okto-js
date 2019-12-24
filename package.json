@@ -3,12 +3,10 @@
   "scripts": {
     "test": "lerna run test",
     "lint": "tslint --project ./tsconfig.json",
-    "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
-    "lerna:version": "lerna version",
-    "prepublish": "lerna run prepublish",
-    "lerna:publish": "lerna publish from-git --yes"
+    "version": "lerna version",
+    "publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "lerna": "^3.19.0"

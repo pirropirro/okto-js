@@ -11,12 +11,9 @@ install:
 script:
   - yarn test 
   - yarn build
-before_script:
-  - yarn prepublish
-  - yarn prepublish
 deploy:
   provider: script
-  script: "yarn run lerna:publish"
+  script: "yarn publish"
   skip_cleanup: true
   email: fra.pirrotta@gmail.com
   api_key:
