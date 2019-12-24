@@ -1,17 +1,26 @@
 language: node_js
 node_js:
-- '6'
+- '10'
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
 install:
 - yarn
 - yarn add react@16.12.0 react-dom@16.12.0
 script:
-- yarn build
+- yarn test && yarn build
+before_script:
+  - yarn prepublish
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
-  provider: yarn
+  provider: script
+  script: "yarn run lerna:publish"
   skip_cleanup: true
   email: fra.pirrotta@gmail.com
   api_key:
     secure: G9DNf2UIfLw0f91OmVHuOQbGIFkX2gohZA8I+qQltRLIbX93ATk6UfAc5H+1Rma7xQo0rsPFAoEC4Stdfief5uTd0bkhFJuYzgNZiXJPR6blhlc6q9iFO1jYUnz9vbEByGhE9dGckeLJI3QE7QLc0xUrMeSB3h4XMp54T3pppFr/uHBAH+julsojADwaAdoCxvdaNc5G7AngyVSvUENngT/VGDh3P4k8ZkmhbAL6VlY5TXuLBiwKU1p2QqHMKlVFtxAQj9SLOBhOV2K4PMdPA+k8sWBeeGcPNzE0fH9tbgAjYx4vnt2FkmvVBt41R7/HYryF7OmMSCwOoU0qm+WGvX6lPoS3RPntJ4cEqtAFPhmiroPG2y6rNV9ZIH7NblRkC29qn3jDY2rLeF3uWj8Kfc48DhQx1WPqRvI/fJVohtsWZGIMz4R5J/68oc5p9yuYvLjxNkpNCn6z2cbZEWNk+uviWlS6m/ukvUvkuxX4csEam8RmnIUxglCPuIwd3tKCHKWiUbZJXuZVKAgqGJGf8Qk1ORUgEtXbbZl8x/aY+aJpmuZ0r8HONMmQiN0QJlhloU/3tTtenalcw5tXwPb7kczInS6I+aOCIWCHHL0wDipAZ8pD+z6e67bC9rgAXPBhgGkoweKdTYj76gzJstOlOu3w1HYfQABsxJiqhUwB3bU=
   on:
+    node: "10"
     tags: true
-    repo: pirropirro/okto-js
