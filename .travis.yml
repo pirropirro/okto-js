@@ -6,11 +6,13 @@ cache:
   directories:
     - "node_modules"
 install:
-- yarn
-- yarn add react@16.12.0 react-dom@16.12.0
+  - yarn
+  - yarn bootstrap
 script:
-- yarn test && yarn build
+  - yarn test 
+  - yarn build
 before_script:
+  - yarn prepublish
   - yarn prepublish
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
