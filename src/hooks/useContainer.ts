@@ -5,7 +5,7 @@ import { container as BaseContainer } from "../bootstrapper/container";
 
 export function UseContainerFactory(container: Container, useState: typeof UseState, useEffect: typeof UseEffect) {
   return function <T>(identifier: string | symbol): T {
-    const [instance, setInstance] = useState<T>();
+    const [instance, setInstance] = useState<T>(null);
 
     useEffect(() => {
       setInstance(container.get<T>(identifier));

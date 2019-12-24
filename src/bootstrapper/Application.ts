@@ -1,15 +1,16 @@
+import * as _ from "lodash";
 import { interfaces } from "inversify";
 import getDecorators from "inversify-inject-decorators";
 
 import * as React from "react";
 import { render } from "react-dom";
 
+import { IModule } from "../module/IModule";
 import { AppModule } from "./AppModule";
 import { container } from "./container";
-import { IModule } from "../module/IModule";
 import { IModuleExtender } from "../module/IModuleExtender";
 
-type Identifier =  string | symbol | interfaces.Newable<any> | interfaces.Abstract<any>;
+type Identifier = string | symbol | interfaces.Newable<any> | interfaces.Abstract<any>;
 export type lazyInjectType = (serviceIdentifier: Identifier) => (proto: any, key: string) => void;
 export type lazyMultiInjectType = (serviceIdentifier: Identifier) => (proto: any, key: string) => void;
 
