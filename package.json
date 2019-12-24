@@ -6,7 +6,7 @@
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
-    "lerna:version": "lerna version prerelease --preid beta",
+    "lerna:version": "lerna version",
     "prepublish": "lerna run prepublish",
     "lerna:publish": "lerna publish from-git --yes"
   },
