@@ -9,7 +9,7 @@
     "build": "lerna run build --stream --parallel",
     "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version prerelease --preid beta",
-    "lerna:publish": "lerna publish from-git --yes --npm-client yarn"
+    "lerna:publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "lerna": "^3.19.0"
