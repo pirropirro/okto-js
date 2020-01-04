@@ -1,5 +1,6 @@
 {
   "name": "okto-js",
+  "version": "0.0.7-beta.4",
   "scripts": {
     "lerna": "lerna",
     "test": "lerna run test",
@@ -12,5 +13,7 @@
   "devDependencies": {
     "lerna": "^3.19.0"
   },
-  "version": "0.0.7-beta.3"
+  "publishConfig": {
+    "access": "public"
+  }
 }

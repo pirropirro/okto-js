@@ -45,5 +45,8 @@
   "scripts": {
     "test": "mocha .",
     "build": "rm -rf dist && tsc"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
