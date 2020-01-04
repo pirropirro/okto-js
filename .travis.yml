@@ -7,13 +7,13 @@ cache:
     - "node_modules"
 install:
   - yarn
-  - yarn bootstrap
+  - yarn lerna:bootstrap
 script:
   - yarn test 
   - yarn build
 deploy:
   provider: script
-  script: "yarn publish"
+  script: "yarn lerna:publish"
   skip_cleanup: true
   email: fra.pirrotta@gmail.com
   api_key:
