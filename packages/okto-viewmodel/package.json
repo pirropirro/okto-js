@@ -1,7 +1,7 @@
 {
   "name": "okto-viewmodel",
   "author": "pirropirro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist",
   "types": "dist",
   "license": "MIT",
@@ -15,7 +15,7 @@
   "homepage": "https://github.com/pirropirro/signs-web#readme",
   "dependencies": {
     "inversify": "^4.3.0",
-    "okto-core": "^0.1.1",
+    "okto-core": "^0.1.2",
     "reflect-metadata": "0.1.8",
     "rxjs": "^6.5.3"
   },

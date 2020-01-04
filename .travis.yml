@@ -4,20 +4,21 @@ node_js:
 cache:
   yarn: true
   directories:
-    - "node_modules"
+  - node_modules
 install:
-  - yarn
-  - yarn lerna:bootstrap
+- yarn
+- yarn lerna:bootstrap
 script:
-  - yarn test 
-  - yarn build
+- yarn test
+- yarn build
 deploy:
   provider: script
-  script: "yarn lerna:publish"
+  script: yarn lerna:publish
   skip_cleanup: true
   email: fra.pirrotta@gmail.com
-  api_key:
-    secure: G9DNf2UIfLw0f91OmVHuOQbGIFkX2gohZA8I+qQltRLIbX93ATk6UfAc5H+1Rma7xQo0rsPFAoEC4Stdfief5uTd0bkhFJuYzgNZiXJPR6blhlc6q9iFO1jYUnz9vbEByGhE9dGckeLJI3QE7QLc0xUrMeSB3h4XMp54T3pppFr/uHBAH+julsojADwaAdoCxvdaNc5G7AngyVSvUENngT/VGDh3P4k8ZkmhbAL6VlY5TXuLBiwKU1p2QqHMKlVFtxAQj9SLOBhOV2K4PMdPA+k8sWBeeGcPNzE0fH9tbgAjYx4vnt2FkmvVBt41R7/HYryF7OmMSCwOoU0qm+WGvX6lPoS3RPntJ4cEqtAFPhmiroPG2y6rNV9ZIH7NblRkC29qn3jDY2rLeF3uWj8Kfc48DhQx1WPqRvI/fJVohtsWZGIMz4R5J/68oc5p9yuYvLjxNkpNCn6z2cbZEWNk+uviWlS6m/ukvUvkuxX4csEam8RmnIUxglCPuIwd3tKCHKWiUbZJXuZVKAgqGJGf8Qk1ORUgEtXbbZl8x/aY+aJpmuZ0r8HONMmQiN0QJlhloU/3tTtenalcw5tXwPb7kczInS6I+aOCIWCHHL0wDipAZ8pD+z6e67bC9rgAXPBhgGkoweKdTYj76gzJstOlOu3w1HYfQABsxJiqhUwB3bU=
   on:
-    node: "10"
+    node: '10'
     tags: true
+env:
+  global:
+    secure: pNnc8shPG0R0Da4T6LBKgDNx+mMQCQ4kcT7QXTRcgkL0j5kYdskpwqn8bcdNl5QLKLkeQ2Xuk+4t9njE1kXhLEZBYy2c+gS8ovRW0899JL5IwdyensX9xOdF/2F75gNT5X0SEFuPYVBL9S+qATF4zsaFo33HzK3TIeoTnINkLITIQ5W8x4aa0uMLJjo8/giX2b8TVzEOQ98OKqJ7UcWaRMTXXPbe0EBravmWAu3G0e5p/7ZmoZw5JO9hdYMZMm/btPVYK3z2bw7DLC+1eJo08EKWSoeU4KtZ7cJZVVtpOTc2Gnmg/ZajFg48SAE2kEEs9mXPTx2gWJzTTy+1FN9tj5GaraiIQ/6wlar03GZu3v7Mo9bN+KtU1jY1SSDYwe0x93ylsIbUvM+fuL9gFHu0vm6jZopCH+eyauXN6u/ihyKbs3STUO83j3ImhyyT+RMZgOdLdGuSFymqgozLIt34fimyiG9uo3y0cJPJoGmwUdY13fgWINi4mveEAVFzSAHx4XZrxLmxTJpQ8W4+UfeE8HJhpny54Xs8ZiI5mo1ovY/KTp0qcq0WYpFZzYVwZ6nw7RcthT3zSAXQShiWoaDlhiZfyZPkuVjUVfR0wMckYjr6hux7/VMtwS/Nt1H+9fKg1wF6bXLsZwbyQoK0bDqOE4AdrFO7SKe21vt/V8AkWVc=
