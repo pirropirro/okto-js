@@ -6,9 +6,10 @@
     "lerna": "lerna",
     "test": "lerna run test",
     "lint": "tslint --project ./tsconfig.json",
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
-    "publish-npm": "lerna run publish-npm"
+    "lerna:bootstrap": "lerna bootstrap",
+    "lerna:version": "lerna version prerelease --preid beta",
+    "lerna:publish": "lerna publish from-git --yes --npm-client yarn"
   },
   "devDependencies": {
     "lerna": "^3.19.0"
