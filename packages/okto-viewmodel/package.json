@@ -44,6 +44,7 @@
   },
   "scripts": {
     "test": "mocha .",
+    "publish-npm": "npm publish --access public",
     "build": "rm -rf dist && tsc"
   },
   "publishConfig": {

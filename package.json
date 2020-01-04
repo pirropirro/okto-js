@@ -1,6 +1,7 @@
 {
   "name": "okto-js",
   "version": "0.0.7-beta.4",
+  "license": "MIT",
   "scripts": {
     "lerna": "lerna",
     "test": "lerna run test",
@@ -8,7 +9,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
     "version": "lerna version",
-    "publish": "lerna publish from-git --yes"
+    "publish": "publish from-git",
+    "publish-npm": "lerna run publish-npm"
   },
   "devDependencies": {
     "lerna": "^3.19.0"
