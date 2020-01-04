@@ -1,6 +1,7 @@
 {
   "name": "okto-js",
   "scripts": {
+    "lerna": "lerna",
     "test": "lerna run test",
     "lint": "tslint --project ./tsconfig.json",
     "bootstrap": "lerna bootstrap",
@@ -11,5 +12,5 @@
   "devDependencies": {
     "lerna": "^3.19.0"
   },
-  "version": "0.0.7-beta.1"
+  "version": "0.0.7-beta-2"
 }
