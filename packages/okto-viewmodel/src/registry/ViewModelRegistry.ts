@@ -1,5 +1,5 @@
 import { Dictionary } from "lodash";
-import { IObjectContainer, IServiceLocator } from "@okto/core";
+import { IObjectContainer, IServiceLocator } from "okto-core";
 import { injectable, interfaces, multiInject, inject, optional } from "inversify";
 
 import { ViewModel } from "../viewmodel/ViewModel";
