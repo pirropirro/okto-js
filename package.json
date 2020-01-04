@@ -8,7 +8,7 @@
     "lint": "tslint --project ./tsconfig.json",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
-    "version": "lerna version",
+    "version": "lerna version --no-push",
     "publish": "publish from-git",
     "publish-npm": "lerna run publish-npm"
   },
