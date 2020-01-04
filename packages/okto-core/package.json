@@ -1,7 +1,7 @@
 {
   "name": "okto-core",
   "author": "pirropirro",
-  "version": "0.0.8-beta.2",
+  "version": "0.0.8-beta.3",
   "main": "dist",
   "types": "dist",
   "license": "MIT",
