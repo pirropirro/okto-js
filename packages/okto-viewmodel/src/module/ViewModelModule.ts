@@ -1,5 +1,5 @@
 import { interfaces } from "inversify";
-import { IModule, IModuleExtender } from "@okto/core";
+import { IModule, IModuleExtender } from "okto-core";
 
 import { ViewModelRegistry } from "../registry/ViewModelRegistry";
 import { IViewModelFactory } from "../registry/IViewModelFactory";

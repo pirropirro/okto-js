@@ -3,7 +3,7 @@ import { useState as UseState, useEffect as UseEffect } from "react";
 
 import { IViewModel } from "../viewmodel/IViewModel";
 import { IViewModelFactory } from "../registry/IViewModelFactory";
-import { useContainer as UseContainer } from "@okto/core";
+import { useContainer as UseContainer } from "okto-core";
 
 // tslint:disable-next-line: max-line-length
 export function UseViewmodelFactory(useContainer: typeof UseContainer, useState: typeof UseState, useEffect: typeof UseEffect) {

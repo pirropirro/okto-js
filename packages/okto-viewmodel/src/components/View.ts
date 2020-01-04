@@ -2,7 +2,7 @@ import * as React from "react";
 import { Unsubscribable } from "rxjs";
 import { interfaces } from "inversify";
 
-import { lazyInject } from "@okto/core";
+import { lazyInject } from "okto-core";
 import { IViewModel } from "../viewmodel/IViewModel";
 import { IViewModelFactory } from "../registry/IViewModelFactory";
 

@@ -1,7 +1,7 @@
 import { inject, injectable } from "inversify";
 
 import { IViewModelRegistry } from "../registry/IViewModelRegistry";
-import { IServiceLocator, IModule, IModuleExtender } from "@okto/core";
+import { IServiceLocator, IModule, IModuleExtender } from "okto-core";
 
 export interface IViewModelsModule extends IModule {
   viewmodels(registry: IViewModelRegistry, serviceLocator: IServiceLocator): void;

@@ -1,7 +1,7 @@
 {
-  "name": "@okto/core",
+  "name": "okto-core",
   "author": "pirropirro",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "dist",
   "types": "dist",
   "license": "MIT",
@@ -44,5 +44,8 @@
   "scripts": {
     "test": "exit 0;",
     "build": "rm -rf dist && tsc"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

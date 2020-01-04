@@ -1,16 +1,20 @@
 {
   "name": "okto-js",
+  "version": "0.0.7-beta.4",
+  "license": "MIT",
   "scripts": {
+    "lerna": "lerna",
     "test": "lerna run test",
     "lint": "tslint --project ./tsconfig.json",
-    "lerna": "lerna",
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream --parallel",
+    "lerna:bootstrap": "lerna bootstrap",
     "lerna:version": "lerna version",
-    "prepublish": "lerna run prepublish",
     "lerna:publish": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "lerna": "^3.19.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -4,7 +4,7 @@ import * as React from "react";
 import { isNumber, isFunction } from "lodash";
 import { IMock, Mock, It, Times } from "typemoq";
 
-import { useContainer as UseContainer } from "@okto/core";
+import { useContainer as UseContainer } from "okto-core";
 import { SimpleViewModel } from "./fixtures/SimpleViewModel";
 import { IViewModelFactory } from "../src/registry/IViewModelFactory";
 import { UseViewmodelFactory, useViewmodel } from "../src/hooks/useViewmodel";
