@@ -17,6 +17,5 @@ export { Refresh } from "./src/viewmodel/RefreshDecorator";
 export { IViewModelsModule } from "./src/viewmodel/ViewModelModuleExtender";
 
 export { View } from "./src/components/View";
-export { When } from "./src/components/When";
 
 export { ViewModelModule } from "./src/module/ViewModelModule";
