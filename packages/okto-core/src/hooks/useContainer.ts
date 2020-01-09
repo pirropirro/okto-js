@@ -1,18 +1,13 @@
 import { Container } from "inversify";
-import { useState as UseState, useEffect as UseEffect } from "react";
+import { useState as UseState } from "react";
 
 import { container as BaseContainer } from "../bootstrapper/container";
 
-export function UseContainerFactory(container: Container, useState: typeof UseState, useEffect: typeof UseEffect) {
+export function UseContainerFactory(container: Container, useState: typeof UseState) {
   return function <T>(identifier: string | symbol): T {
-    const [instance, setInstance] = useState<T>(null);
-
-    useEffect(() => {
-      setInstance(container.get<T>(identifier));
-    }, []);
-
+    const [instance] = useState<T>(container.get<T>(identifier));
     return instance;
   };
 }
 
-export const useContainer = UseContainerFactory(BaseContainer, UseState, UseEffect);
+export const useContainer = UseContainerFactory(BaseContainer, UseState);

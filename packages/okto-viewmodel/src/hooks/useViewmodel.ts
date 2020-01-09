@@ -1,29 +1,30 @@
+import { isFunction } from "lodash";
 import { interfaces } from "inversify";
+import { useContainer as UseContainer } from "okto-core";
 import { useState as UseState, useEffect as UseEffect } from "react";
 
 import { IViewModel } from "../viewmodel/IViewModel";
 import { IViewModelFactory } from "../registry/IViewModelFactory";
-import { useContainer as UseContainer } from "okto-core";
+
+function isInstance<T extends IViewModel>(viewmodel: interfaces.Newable<T> | T): viewmodel is T {
+  return viewmodel && !isFunction(viewmodel);
+}
 
 // tslint:disable-next-line: max-line-length
 export function UseViewmodelFactory(useContainer: typeof UseContainer, useState: typeof UseState, useEffect: typeof UseEffect) {
-  return function <T extends IViewModel>(constr: interfaces.Newable<T>, options?: any): T {
+  return function <T extends IViewModel>(constr: interfaces.Newable<T> | T, options?: any): T {
     const [_, update] = useState(0);
-    const [viewmodel, setViewmodel] = useState<T>();
     const factory = useContainer<IViewModelFactory>(IViewModelFactory);
+    const [viewmodel] = useState<T>(isInstance(constr) ? constr : factory.createFrom(constr, options));
 
     useEffect(() => {
-      if (!factory) return;
-
-      const vm = factory.createFrom(constr, options);
-      const subscription = vm.subscribe(() => update(count => count + 1));
-      setViewmodel(vm);
+      const subscription = viewmodel.subscribe(() => update(count => count + 1));
 
       return () => {
         if (!!subscription) subscription.unsubscribe();
         if (!!viewmodel) viewmodel.unsubscribe();
       };
-    }, [factory]);
+    }, [viewmodel]);
 
     return viewmodel;
   };
