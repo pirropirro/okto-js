@@ -6,8 +6,8 @@ import { IMock, Mock, It, Times } from "typemoq";
 import { useContainer as UseContainer } from "okto-core";
 
 import { SimpleViewModel } from "./fixtures/SimpleViewModel";
-import { useViewmodel as UseViewmodel, UseViewmodelFactory } from "../src/hooks/useViewmodel";
 import { IViewModelFactory } from "../src/registry/IViewModelFactory";
+import { useViewmodel as UseViewmodel, UseViewmodelFactory } from "../src/hooks/useViewmodel";
 
 describe("The useViewmodel hook", () => {
   let subject: typeof UseViewmodel;
@@ -16,6 +16,7 @@ describe("The useViewmodel hook", () => {
   let useContainer: typeof UseContainer;
   let useState: typeof React.useState;
   let useEffect: typeof React.useEffect;
+  let useMemo: typeof React.useMemo;
 
   let viewmodel: SimpleViewModel;
   let updateView: sinon.SinonSpy;
@@ -40,17 +41,18 @@ describe("The useViewmodel hook", () => {
     });
 
     useEffect = (effect) => useEffectCallback = effect;
+    useMemo = (callback) => callback();
 
-    subject = UseViewmodelFactory(useContainer, useState, useEffect);
+    subject = UseViewmodelFactory(useContainer, useState, useEffect, useMemo);
   });
 
   context("when is used in a component via constructor", () => {
     beforeEach(() => {
-      subject(SimpleViewModel, {some: "params"});
+      subject(SimpleViewModel, { some: "params" });
     });
 
     it("should retrieve the viewmodel", () => {
-      factory.verify(f => f.createFrom(It.isValue(SimpleViewModel), It.isValue({some: "params"})), Times.once());
+      factory.verify(f => f.createFrom(It.isValue(SimpleViewModel), It.isValue({ some: "params" })), Times.once());
     });
 
     context(("and it is mount"), () => {
@@ -86,11 +88,11 @@ describe("The useViewmodel hook", () => {
 
   context("when is used in a component via instance", () => {
     beforeEach(() => {
-      subject(viewmodel, {some: "params"});
+      subject(viewmodel, { some: "params" });
     });
 
     it("should NOT retrieve the viewmodel", () => {
-      factory.verify(f => f.createFrom(It.isAny(), It.isValue({some: "params"})), Times.never());
+      factory.verify(f => f.createFrom(It.isAny(), It.isValue({ some: "params" })), Times.never());
     });
 
     context(("and it is mount"), () => {

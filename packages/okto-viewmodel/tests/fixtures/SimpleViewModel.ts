@@ -4,6 +4,7 @@ import { Refresh } from "../../src/viewmodel/RefreshDecorator";
 export class SimpleViewModel extends ViewModel {
   public counter = 0;
   public isDisposed = false;
+  protected useDebounce = false;
 
   @Refresh
   public increase() {

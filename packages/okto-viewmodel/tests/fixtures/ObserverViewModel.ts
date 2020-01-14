@@ -6,6 +6,7 @@ export class ObserverViewModel extends ObservableViewModel<number> {
   public error: Error;
   public async = false;
   public disposed = false;
+  protected useDebounce = false;
 
   public onData(model: number) {
     if (!this.models) this.models = [];

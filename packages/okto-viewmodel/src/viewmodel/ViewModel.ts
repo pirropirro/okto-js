@@ -1,18 +1,22 @@
 import { isFunction } from "lodash";
-import { Subject, Observer, from } from "rxjs";
+import { Subject, Observer } from "rxjs";
+import { debounceTime } from "rxjs/operators";
 import { injectable, interfaces, decorate } from "inversify";
 
 import { IViewModel } from "./IViewModel";
 
 @injectable()
 export abstract class ViewModel implements IViewModel {
+  protected useDebounce = true;
   private subject = new Subject<void>();
 
   public subscribe(observerOrOnNext?: any, error?: (error: any) => void, complete?: () => void) {
+    const subject = this.useDebounce ? this.subject.pipe(debounceTime(1)) : this.subject;
+
     if (isObserver(observerOrOnNext))
-      return this.subject.subscribe(observerOrOnNext);
+      return subject.subscribe(observerOrOnNext);
     else
-      return this.subject.subscribe(observerOrOnNext, error, complete);
+      return subject.subscribe(observerOrOnNext, error, complete);
   }
 
   // tslint:disable-next-line: no-empty
@@ -35,7 +39,7 @@ export namespace ViewModel {
   }
 
   export function nameAs(name: string) {
-    return function(target: any) {
+    return function (target: any) {
       decorate(injectable(), target);
       Reflect.defineMetadata(VIEWMODEL_NAME, name, target);
       return target;
