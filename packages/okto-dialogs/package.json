@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/pirropirro/signs-web#readme",
   "dependencies": {
+		"classnames": "2.2.6",
 		"inversify": "^4.3.0",
 		"lodash": "4.17.15",
     "okto-core": "^0.1.4",

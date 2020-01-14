@@ -39,7 +39,7 @@ export namespace ViewModel {
   }
 
   export function nameAs(name: string) {
-    return function (target: any) {
+    return function(target: any) {
       decorate(injectable(), target);
       Reflect.defineMetadata(VIEWMODEL_NAME, name, target);
       return target;
