@@ -1,0 +1,7 @@
+.git
+.idea
+.travis
+src
+node_modules
+tests
+!dist/**/*

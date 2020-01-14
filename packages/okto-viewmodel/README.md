@@ -1,10 +1,10 @@
-# react-viewmodel
+# okto-viewmodel
 
 ## How to use it
 
 - Create a viewmodel 
 ```typescript
-import { ViewModel, Refresh } from "react-viewmodel";
+import { ViewModel, Refresh } from "okto-viewmodel";
 
 @ViewModel.nameAs("Vegeta")
 export class VegetaViewModel extends ViewModel {
@@ -40,7 +40,7 @@ export class VegetaViewModel extends ViewModel {
     - or using the `useViewmodel` hook
     ```tsx
     import * as React from "react";
-    import { useViewmodel } from "react-viewmodel";
+    import { useViewmodel } from "okto-viewmodel";
 
     import { VegetaViewModel } from "./VegetaViewModel";
 
@@ -58,7 +58,7 @@ export class VegetaViewModel extends ViewModel {
     - or extends the `View` component factory
     ```tsx
     import * as React from "react";
-    import { View } from "react-viewmodel";
+    import { View } from "okto-viewmodel";
 
     import { VegetaViewModel } from "./VegetaViewModel";
 
@@ -78,8 +78,8 @@ export class VegetaViewModel extends ViewModel {
 - Create a module and register the viewmodel in it.
 ```typescript
 import { interfaces } from "inversify";
-import { IViewModelsModule } from "react-viewmodel";
-import { IModule, IViewModelRegistry } from "react-container";
+import { IViewModelsModule } from "okto-viewmodel";
+import { IModule, IViewModelRegistry } from "okto-core";
 
 import { VegetaViewModel } from './VegetaViewModel';
 
@@ -104,8 +104,8 @@ export class MainModule implements IModule, IViewModelsModule {
 ```tsx
 import "reflect-metadata";
 import * as React from "react";
-import { Application } from "react-container";
-import { ViewModelModule } from "react-viewmodel";
+import { Application } from "okto-core";
+import { ViewModelModule } from "okto-viewmodel";
 
 import { MainModule } from './MainModule';
 import { VegetaComponent } from "./VegetaComponent";
