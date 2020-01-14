@@ -1,7 +1,7 @@
 {
   "name": "okto-dialogs",
   "author": "pirropirro",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "dist",
   "types": "dist",
   "license": "MIT",
@@ -14,10 +14,10 @@
   },
   "homepage": "https://github.com/pirropirro/signs-web#readme",
   "dependencies": {
-		"classnames": "2.2.6",
-		"inversify": "^4.3.0",
-		"lodash": "4.17.15",
-    "okto-core": "^0.1.4",
+    "classnames": "2.2.6",
+    "inversify": "^4.3.0",
+    "lodash": "4.17.15",
+    "okto-core": "^0.1.5",
     "reflect-metadata": "0.1.8",
     "rxjs": "^6.5.3"
   },
