@@ -6,7 +6,7 @@ import { container as BaseContainer } from "../bootstrapper/container";
 export function UseContainerFactory(container: Container, useState: typeof UseState, useMemo: typeof UseMemo) {
   return function <T>(identifier: string | symbol): T {
     const [instance] = useState<T>(
-      useMemo(() => container.get<T>(identifier), []));
+      useMemo(() => container.get<T>(identifier), [identifier]));
     return instance;
   };
 }

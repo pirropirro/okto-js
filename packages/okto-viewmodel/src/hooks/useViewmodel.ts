@@ -16,7 +16,7 @@ export function UseViewmodelFactory(useContainer: typeof UseContainer, useState:
     const [_, update] = useState(0);
     const factory = useContainer<IViewModelFactory>(IViewModelFactory);
     const [viewmodel] = useState<T>(
-      useMemo(() => isInstance(constr) ? constr : factory.createFrom(constr, options), []));
+      useMemo(() => isInstance(constr) ? constr : factory.createFrom(constr, options), [constr]));
 
     useEffect(() => {
       const subscription = viewmodel.subscribe(() => update(count => count + 1));

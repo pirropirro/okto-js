@@ -13,7 +13,7 @@ export function useDialog<T>(identifier: DialogIdentifier): DialogController<T> 
   const [dialog] = useState<DialogController<T>>(useMemo(() => ({
     show: (options?: any) => service.show<T>(identifier, options),
     hide: () => service.hide(),
-  }), []));
+  }), [identifier]));
 
   return dialog;
 }
