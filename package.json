@@ -1,6 +1,6 @@
 {
   "name": "okto-js",
-  "version": "0.0.7-beta.4",
+  "version": "0.1.6",
   "license": "MIT",
   "scripts": {
     "lerna": "lerna",
